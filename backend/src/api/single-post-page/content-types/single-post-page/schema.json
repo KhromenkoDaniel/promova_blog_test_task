@@ -1,0 +1,33 @@
+{
+  "kind": "singleType",
+  "collectionName": "single_post_pages",
+  "info": {
+    "singularName": "single-post-page",
+    "pluralName": "single-post-pages",
+    "displayName": "Single Post Page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "coverImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

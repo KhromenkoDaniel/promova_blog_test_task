@@ -1,0 +1,35 @@
+{
+  "kind": "singleType",
+  "collectionName": "blog_list_pages",
+  "info": {
+    "singularName": "blog-list-page",
+    "pluralName": "blog-list-pages",
+    "displayName": "Blog List Page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "coverImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "articles": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::article.article"
+    }
+  }
+}
