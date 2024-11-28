@@ -1,4 +1,4 @@
-export type Article = {
+export type Post = {
     id: number;
     title: string;
     description: string;
@@ -18,11 +18,11 @@ export type Article = {
     content: string
 }
 
-export type ArticleGridProps = {
-    articles: Article[];
+export type PostsGridProps = {
+    posts: Post[];
 };
 
-export type ArticlesPerPageSelectProps = {
+export type PostsPerPageSelectProps = {
     limit: number;
     onLimitChange: (limit: number) => void;
 };

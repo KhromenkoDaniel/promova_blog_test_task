@@ -2,11 +2,11 @@
 
 import Image from "next/image";
 
-import { Article } from "../../types/article";
+import { Post } from "../../types/post";
 
 import { calculateReadingTime } from "../../utils/readingTime";
 
-export default function ArticleCard({ title, description, cover, date, readTime, content }: Article) {
+export default function PostCard({ title, description, cover, date, readTime, content }: Post) {
     const readingTime = readTime ? calculateReadingTime(content) : "";
 
     return (

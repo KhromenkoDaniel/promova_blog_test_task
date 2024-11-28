@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "articles",
+  "collectionName": "posts",
   "info": {
-    "singularName": "article",
-    "pluralName": "articles",
-    "displayName": "Articles",
+    "singularName": "post",
+    "pluralName": "posts",
+    "displayName": "Posts",
     "description": "Create your blog content"
   },
   "options": {

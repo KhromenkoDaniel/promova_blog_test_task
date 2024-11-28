@@ -2,25 +2,25 @@
 
 import { useState, useEffect } from "react";
 
-import { ArticlesPerPageSelect } from "@/components/Article/ArticlesPerPageSelect";
-import { ArticleGrid } from "@/components/Article/ArticleGrid";
+import { PostsPerPageSelect } from "@/components/Post/PostsPerPageSelect";
+import { PostsGrid } from "@/components/Post/PostsGrid";
 import { BlogPagination } from "@/components/Pagination";
 
-import { Article } from "@/types/article";
+import { Post } from "@/types/post";
 import { BlogContentProps } from "@/types/blog";
 
 export default function BlogContent({ data }: BlogContentProps) {
     const [currentPage, setCurrentPage] = useState(1);
     const [limit, setLimit] = useState(4);
-    const [paginatedArticles, setPaginatedArticles] = useState<Article[]>([]);
+    const [paginatedPosts, setPaginatedPosts] = useState<Post[]>([]);
 
-    const totalArticles = data.length;
-    const totalPages = Math.ceil(totalArticles / limit);
+    const totalPosts = data.length;
+    const totalPages = Math.ceil(totalPosts / limit);
 
     useEffect(() => {
         const startIndex = (currentPage - 1) * limit;
         const endIndex = startIndex + limit;
-        setPaginatedArticles(data.slice(startIndex, endIndex));
+        setPaginatedPosts(data.slice(startIndex, endIndex));
     }, [currentPage, limit, data]);
 
     const handlePageChange = (page: number) => {
@@ -34,11 +34,11 @@ export default function BlogContent({ data }: BlogContentProps) {
 
     return (
         <div className={"flex flex-col justify-between min-h-[calc(100vh-100px)]"}>
-            <ArticlesPerPageSelect
+            <PostsPerPageSelect
                 limit={limit}
                 onLimitChange={handleLimitChange}
             />
-            <ArticleGrid articles={paginatedArticles} />
+            <PostsGrid posts={paginatedPosts} />
             <BlogPagination
                 currentPage={currentPage}
                 totalPages={totalPages}

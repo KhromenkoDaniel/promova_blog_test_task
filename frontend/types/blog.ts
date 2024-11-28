@@ -1,7 +1,7 @@
-import { Article } from "./article";
+import { Post } from "./post";
 
 export type BlogContentProps = {
-    data:  Article[];
+    data:  Post[];
 }
 
 export type PaginationProps = {
