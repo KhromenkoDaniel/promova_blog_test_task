@@ -16,20 +16,10 @@
       "type": "string",
       "required": true
     },
-    "coverImage": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
-      "type": "media",
-      "multiple": false
-    },
-    "articles": {
+    "posts": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::article.article"
+      "target": "api::post.post"
     }
   }
 }
