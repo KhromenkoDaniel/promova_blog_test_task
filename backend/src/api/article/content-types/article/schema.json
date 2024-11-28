@@ -33,22 +33,17 @@
         "videos"
       ]
     },
-    "blocks": {
-      "type": "dynamiczone",
-      "components": [
-        "shared.media",
-        "shared.quote",
-        "shared.rich-text",
-        "shared.slider"
-      ]
-    },
     "readTime": {
       "type": "boolean",
       "default": false,
       "required": false
     },
     "date": {
-      "type": "date"
+      "type": "date",
+      "required": true
+    },
+    "content": {
+      "type": "richtext"
     }
   }
 }
