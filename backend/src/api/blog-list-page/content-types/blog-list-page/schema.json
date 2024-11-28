@@ -16,10 +16,10 @@
       "type": "string",
       "required": true
     },
-    "articles": {
+    "posts": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::article.article"
+      "target": "api::post.post"
     }
   }
 }
