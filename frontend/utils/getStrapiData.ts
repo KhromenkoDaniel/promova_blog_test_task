@@ -1,4 +1,4 @@
-export async function fetchFromStrapi<T>(endpoint: string, query = {}): Promise<T> {
+export async function getStrapiData<T>(endpoint: string, query = {}): Promise<T> {
     const queryString = new URLSearchParams(query as Record<string, string>).toString();
     const url = `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/${endpoint}?${queryString}`;
 

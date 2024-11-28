@@ -1,69 +1,39 @@
 "use client";
 
-import React from "react";
-import { useSearchParams, useRouter } from "next/navigation";
 import {
-    Pagination,
-    PaginationContent,
-    PaginationItem,
-    PaginationLink,
-    PaginationPrevious,
-    PaginationNext,
-    PaginationEllipsis,
-} from "@/components/ui/pagination";
+        Pagination,
+        PaginationContent,
+        PaginationItem,
+        PaginationLink,
+        PaginationPrevious,
+        PaginationNext } from "@/components/ui/pagination";
 
-interface PaginationProps {
-    total: number;
-    current: number;
-}
+import { PaginationProps } from "@/types/blog";
 
-export default function BlogPagination({ total, current }: PaginationProps) {
-    const searchParams = useSearchParams();
-    const router = useRouter();
-
-    const limit = parseInt(searchParams.get("limit") || "2");
-    const totalPages = Math.ceil(total / limit);
-
-    const handlePageChange = (page: number) => {
-        const params = new URLSearchParams(searchParams as any);
-        params.set("page", page.toString());
-        router.push(`/blog?${params.toString()}`);
-    };
-
+export function BlogPagination({ currentPage, totalPages, onPageChange }: PaginationProps) {
     return (
         <Pagination>
             <PaginationContent>
-                {current > 1 && (
+                {currentPage > 1 && (
                     <PaginationItem>
-                        <PaginationPrevious
-                            onClick={() => handlePageChange(current - 1)}
-                            href="#"
-                        />
+                        <PaginationPrevious onClick={() => onPageChange(currentPage - 1)} />
                     </PaginationItem>
                 )}
 
                 {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
                     <PaginationItem key={page}>
-                        {Math.abs(current - page) > 1 && page !== 1 && page !== totalPages ? (
-                            <PaginationEllipsis />
-                        ) : (
-                            <PaginationLink
-                                href="#"
-                                isActive={current === page}
-                                onClick={() => handlePageChange(page)}
-                            >
-                                {page}
-                            </PaginationLink>
-                        )}
+                        <PaginationLink
+                            onClick={() => onPageChange(page)}
+                            isActive={currentPage === page}
+                        >
+                            {page}
+                        </PaginationLink>
                     </PaginationItem>
                 ))}
 
-                {current < totalPages && (
+                {currentPage < totalPages && (
                     <PaginationItem>
-                        <PaginationNext
-                            onClick={() => handlePageChange(current + 1)}
-                            href="#"
-                        />
+                        <PaginationNext onClick={() => onPageChange(currentPage + 1)} />
                     </PaginationItem>
                 )}
             </PaginationContent>
