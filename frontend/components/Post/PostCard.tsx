@@ -21,7 +21,7 @@ export default function PostCard({ title, description, cover, date, readTime, co
             onClick={handleClick}
         >
             <Image
-                src={(process.env.NEXT_PUBLIC_API_BASE_URL + cover?.url) || ""}
+                src={cover?.url || ""}
                 width={cover.width}
                 height={cover.height}
                 quality={75}

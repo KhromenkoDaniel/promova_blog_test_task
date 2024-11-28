@@ -78,7 +78,7 @@ export default async function BlogPostPage({ params }: SinglePostProps) {
                 )}
                 {cover && (
                     <Image
-                        src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${cover.url}`}
+                        src={cover.url}
                         alt={title || ""}
                         width={cover.width}
                         height={cover.height}

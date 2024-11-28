@@ -9,7 +9,6 @@ const nextConfig: NextConfig = {
                 port: "1337",
             },
             {
-                protocol: "https",
                 hostname: "growing-love-1808c4df9c.media.strapiapp.com",
             },
         ],
