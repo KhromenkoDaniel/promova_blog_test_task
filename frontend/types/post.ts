@@ -26,3 +26,16 @@ export type PostsPerPageSelectProps = {
     limit: number;
     onLimitChange: (limit: number) => void;
 };
+
+export type StrapiResponse<T> = {
+    data: T[];
+    meta: Record<string, unknown>;
+}
+
+export type Params = {
+    slug: string;
+};
+
+export type SinglePostProps = {
+    params: Promise<Params>;
+};

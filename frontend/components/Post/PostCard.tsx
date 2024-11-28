@@ -1,16 +1,25 @@
 "use client";
 
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 import { Post } from "../../types/post";
 
 import { calculateReadingTime } from "../../utils/readingTime";
 
-export default function PostCard({ title, description, cover, date, readTime, content }: Post) {
+export default function PostCard({ title, description, cover, date, readTime, content, slug }: Post) {
+    const router = useRouter(); // Initialize router instance
     const readingTime = readTime ? calculateReadingTime(content) : "";
 
+    const handleClick = () => {
+        router.push(`/blog/${slug}`);
+    };
+
     return (
-        <div className="border rounded-lg p-4">
+        <div
+            className="border rounded-lg p-4 cursor-pointer hover:shadow-lg transition-shadow duration-200"
+            onClick={handleClick}
+        >
             <Image
                 src={(process.env.NEXT_PUBLIC_API_BASE_URL + cover?.url) || ""}
                 width={cover.width}
