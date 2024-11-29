@@ -33,7 +33,7 @@ export default function BlogContent({ data }: BlogContentProps) {
     };
 
     return (
-        <div className={"flex flex-col justify-between min-h-[calc(100vh-100px)]"}>
+        <div className="flex flex-col justify-between">
             <PostsPerPageSelect
                 limit={limit}
                 onLimitChange={handleLimitChange}

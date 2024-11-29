@@ -1,6 +1,6 @@
 export default function Footer() {
     return (
-        <footer className="p-4 bg-gray-100 text-center flex justify-between min-h-[80px]">
+        <footer className="p-4 bg-gray-100 text-center flex justify-between">
             <div className={'flex items-center'}>
                 <span>All Rights Reserved ©</span>
             </div>
