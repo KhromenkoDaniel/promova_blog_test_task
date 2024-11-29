@@ -1,11 +1,11 @@
 import { Post } from "./post";
 
 export type BlogContentProps = {
-    data:  Post[];
-}
+  data: Post[];
+};
 
 export type PaginationProps = {
-    currentPage: number;
-    totalPages: number;
-    onPageChange: (page: number) => void;
+  currentPage: number;
+  totalPages: number;
+  handlePageChangeAction: (page: number) => void;
 };
