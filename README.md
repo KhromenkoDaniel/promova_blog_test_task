@@ -10,7 +10,6 @@
   - [Task 3: SEO, Performance, and Deployment](#task-3-seo-performance-and-deployment)
 - [Project Files Overview](#project-files-overview)
 - [Instructions to Run the Project](#instructions-to-run-the-project)
-- [License](#license)
 
 ## Project Description
 
