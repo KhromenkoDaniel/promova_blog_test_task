@@ -83,6 +83,7 @@ export default async function BlogPostPage({ params }: SinglePostProps) {
                         width={cover.width}
                         height={cover.height}
                         className="rounded-lg w-full object-cover"
+                        style={{ aspectRatio: '3/2' }}
                         priority
                     />
                 )}

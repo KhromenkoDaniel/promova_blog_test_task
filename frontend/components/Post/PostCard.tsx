@@ -28,6 +28,7 @@ export default function PostCard({ title, description, cover, date, readTime, co
                 alt={title}
                 priority
                 className="w-full h-48 object-cover rounded-md"
+                style={{ aspectRatio: '3/2' }}
             />
             <h2 className="mt-2 text-lg font-bold">{title}</h2>
             <p className="text-gray-600">{description}</p>
