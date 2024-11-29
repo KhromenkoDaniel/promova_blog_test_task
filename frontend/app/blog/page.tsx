@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 
 import { getStrapiData } from "@/utils/getStrapiData";
 
-import BlogContent from "./BlogContent";
+import BlogContent from '@/components/BlogContent';
 
 import { Post } from "@/types/post";
 

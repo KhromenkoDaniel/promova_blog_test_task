@@ -2,12 +2,12 @@
 
 import { useState, useEffect } from "react";
 
-import { PostsPerPageSelect } from "@/components/Post/PostsPerPageSelect";
-import { PostsGrid } from "@/components/Post/PostsGrid";
-import { BlogPagination } from "@/components/Pagination";
+import { PostsPerPageSelect } from "./Post/PostsPerPageSelect";
+import { PostsGrid } from "./Post/PostsGrid";
+import { BlogPagination } from "./Pagination";
 
-import { Post } from "@/types/post";
-import { BlogContentProps } from "@/types/blog";
+import { Post } from "../types/post";
+import { BlogContentProps } from "../types/blog";
 
 export default function BlogContent({ data }: BlogContentProps) {
     const [currentPage, setCurrentPage] = useState(1);
