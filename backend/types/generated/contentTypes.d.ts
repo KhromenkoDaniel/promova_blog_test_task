@@ -466,40 +466,6 @@ export interface ApiPostPost extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiSinglePostPageSinglePostPage
-  extends Struct.SingleTypeSchema {
-  collectionName: 'single_post_pages';
-  info: {
-    description: '';
-    displayName: 'Single Post Page';
-    pluralName: 'single-post-pages';
-    singularName: 'single-post-page';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    coverImage: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios'
-    >;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    description: Schema.Attribute.Text;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::single-post-page.single-post-page'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -1012,7 +978,6 @@ declare module '@strapi/strapi' {
       'api::blog-list-page.blog-list-page': ApiBlogListPageBlogListPage;
       'api::global.global': ApiGlobalGlobal;
       'api::post.post': ApiPostPost;
-      'api::single-post-page.single-post-page': ApiSinglePostPageSinglePostPage;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
